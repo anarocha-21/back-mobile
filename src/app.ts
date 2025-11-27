@@ -1,7 +1,11 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
+import router from "./routes/tarefasRouter";
 
 const app = express();
+app.use(express.json())
+
+app.use("/tarefas", router)
 
 // rota generica
 app.use((req: Request, res: Response, next: NextFunction) => {
